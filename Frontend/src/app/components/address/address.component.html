@@ -1,0 +1,234 @@
+<div class="card">
+  
+    <h5 class="card-header">Select a delivery address</h5>
+    <div *ngFor = "let address of Addresses">
+    <div class="card-body">
+      <h5 class="card-title">{{User.Name}},{{address.Pincode}}</h5>
+      <p class="card-text">{{address.Line1}},{{address.Line2}}</p>
+      <p class="card-text">{{address.City}},{{address.State}}</p>
+      <a type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="onChange(address)">Change Address</a>
+
+    </div>
+</div>
+<button class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">Add a New Address</button>
+  </div>
+ 
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Change Delivery Address</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                     <form class="form-horizontal" #addressForm=ngForm (Submit)="onSubmit()">
+                        <fieldset>
+                            <!-- Address form -->
+                     
+                            <h2>Address</h2>
+                            <!-- address-line1 input-->
+                            <div class="control-group">
+                                <label class="control-label">Address Line 1</label>
+                                <div class="controls">
+                                    <input 
+                                    id="Line1" 
+                                    name="Line1" 
+                                    type="text" 
+                                    placeholder="address line 1"
+                                    class="input-xlarge" 
+                                    #Line1="ngModel" 
+                                    [(ngModel)]="AddressModel.Line1">
+                                    <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                                </div>
+                            </div>
+                            <!-- address-line2 input-->
+                            <div class="control-group">
+                                <label class="control-label">Address Line 2</label>
+                                <div class="controls">
+                                    <input 
+                                    id="Line2" 
+                                    name="Line2" 
+                                    type="text" 
+                                    placeholder="address line 2"
+                                    class="input-xlarge" 
+                                    #Line2="ngModel" 
+                                    [(ngModel)]="AddressModel.Line2">
+                                    <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                                </div>
+                            </div>
+                            <!-- city input-->
+                            <div class="control-group">
+                                <label class="control-label">City / Town</label>
+                                <div class="controls">
+                                    <input 
+                                    id="City" 
+                                    name="City" 
+                                    type="text" 
+                                    placeholder="city" 
+                                    class="input-xlarge" 
+                                    #City="ngModel" 
+                                    [(ngModel)]="AddressModel.City">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <!-- region input-->
+                            <div class="control-group">
+                                <label class="control-label">State / Province / Region</label>
+                                <div class="controls">
+                                    <input 
+                                    id="State" 
+                                    name="State" 
+                                    type="text" 
+                                    placeholder="state / province / region"
+                                    class="input-xlarge" 
+                                    #State="ngModel" 
+                                    [(ngModel)]="AddressModel.State">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <!-- postal-code input-->
+                            <div class="control-group">
+                                <label class="control-label">Zip / Postal Code</label>
+                                <div class="controls">
+                                    <input 
+                                    id="Pincode" 
+                                    name="Pincode" 
+                                    type="text" 
+                                    placeholder="zip or postal code"
+                                    class="input-xlarge" 
+                                    #Pincode="ngModel" 
+                                    [(ngModel)]="AddressModel.Pincode">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <div>{{AddressModel}}</div> -->
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button  type="submit" class="btn btn-primary" (click)=onSubmit()>Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Delivery Address</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                     <form class="form-horizontal" #addressForm=ngForm (Submit)="onAdd()">
+                        <fieldset>
+                            <!-- Address form -->
+                     
+                            <h2>Address</h2>
+                            <!-- address-line1 input-->
+                            <div class="control-group">
+                                <label class="control-label">Address Line 1</label>
+                                <div class="controls">
+                                    <input 
+                                    id="Line1" 
+                                    name="Line1" 
+                                    type="text" 
+                                    placeholder="address line 1"
+                                    class="input-xlarge" 
+                                    #Line1="ngModel" 
+                                    [(ngModel)]="NewAddress.Line1">
+                                    <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                                </div>
+                            </div>
+                            <!-- address-line2 input-->
+                            <div class="control-group">
+                                <label class="control-label">Address Line 2</label>
+                                <div class="controls">
+                                    <input 
+                                    id="Line2" 
+                                    name="Line2" 
+                                    type="text" 
+                                    placeholder="address line 2"
+                                    class="input-xlarge" 
+                                    #Line2="ngModel" 
+                                    [(ngModel)]="NewAddress.Line2">
+                                    <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                                </div>
+                            </div>
+                            <!-- city input-->
+                            <div class="control-group">
+                                <label class="control-label">City / Town</label>
+                                <div class="controls">
+                                    <input 
+                                    id="City" 
+                                    name="City" 
+                                    type="text" 
+                                    placeholder="city" 
+                                    class="input-xlarge" 
+                                    #City="ngModel" 
+                                    [(ngModel)]="NewAddress.City">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <!-- region input-->
+                            <div class="control-group">
+                                <label class="control-label">State / Province / Region</label>
+                                <div class="controls">
+                                    <input 
+                                    id="State" 
+                                    name="State" 
+                                    type="text" 
+                                    placeholder="state / province / region"
+                                    class="input-xlarge" 
+                                    #State="ngModel" 
+                                    [(ngModel)]="NewAddress.State">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <!-- postal-code input-->
+                            <div class="control-group">
+                                <label class="control-label">Zip / Postal Code</label>
+                                <div class="controls">
+                                    <input 
+                                    id="Pincode" 
+                                    name="Pincode" 
+                                    type="text" 
+                                    placeholder="zip or postal code"
+                                    class="input-xlarge" 
+                                    #Pincode="ngModel" 
+                                    [(ngModel)]="NewAddress.Pincode">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>{{NewAddress}}</div>
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button  type="submit" class="btn btn-primary" (click)=onAdd()>Add</button>
+        </div>
+      </div>
+    </div>
+  </div>

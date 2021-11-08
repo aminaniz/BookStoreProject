@@ -1,0 +1,6 @@
+<div class="side">
+    <h3>Browse by category</h3>
+    <ul class="list-group list-group-flush">
+        <a  *ngFor="let categ of categories" (click)=findBooks(categ.CategoryId)><li class="list-group-item">{{categ.Name}}</li></a>
+      </ul>
+    </div>

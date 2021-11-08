@@ -1,0 +1,10 @@
+.card-img-top{
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    margin: auto;
+}
+
+.mb-4{
+    margin-top: 70px;
+}

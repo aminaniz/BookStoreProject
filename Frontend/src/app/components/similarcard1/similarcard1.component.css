@@ -1,0 +1,45 @@
+.card-title{
+    font-size: x-large;
+
+}
+.container{
+    margin-top: 20px;
+}
+.card-img-top{
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    margin: auto;
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.card-body{
+    height: 100px;
+    text-align: center;
+}
+.card{
+    border: none;
+    margin-bottom: 20px;
+}
+.carousel{
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.carousel-control-prev-icon{
+  
+    background-color: black;
+}
+.carousel-control-next-icon{
+  
+    background-color: black;
+}
+
+.carousel-control-next-icon{
+    margin-right: -100px;
+}
+.carousel-control-prev{
+    margin-left: -100px;
+}

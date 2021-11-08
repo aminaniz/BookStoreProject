@@ -1,0 +1,14 @@
+.list-group-item{
+    width: 300px;
+    border: none;
+}
+.side{
+    margin-left: 40px;
+    margin-top: 40px;
+}
+ul{
+    border: none;;
+}
+.side{
+    align-items: center;
+}

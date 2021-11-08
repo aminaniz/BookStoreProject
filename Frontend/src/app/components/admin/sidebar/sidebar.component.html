@@ -1,0 +1,40 @@
+
+<link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand pt-0 text-primary" routerLink="/home">
+        Books!
+
+      </a>
+    
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+      
+        <form class="mt-4 mb-3 d-md-none">
+          <div class="input-group input-group-rounded input-group-merge">
+            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="fa fa-search"></span>
+              </div>
+            </div>
+          </div>
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin">
+              <i class="ni ni-tv-2 text-primary"></i> Dashboard
+            </a>
+            <a routerLink="/admin/books" class="nav-link"><i class="ni ni-bold text-primary"></i>Books</a>
+            <a routerLink="/admin/category" class="nav-link"><i class="ni ni-bold text-primary"></i>Category</a>
+            <a routerLink="/admin/customer" class="nav-link"><i class="ni ni-bold text-primary"></i>Users</a>
+            <a routerLink="/admin/allorders" class="nav-link"><i class="ni ni-bold text-primary"></i>Orders</a>
+            <a routerLink="/admin/coupon" class="nav-link"><i class="ni ni-bold text-primary"></i>Coupons</a>
+
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

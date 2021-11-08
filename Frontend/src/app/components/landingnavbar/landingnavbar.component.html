@@ -1,0 +1,60 @@
+
+  <nav class="navbar navbar-tp navbar-expand-md navbar-dark bg-dark sticky-top" id="navbar-main">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <a class="navbar-brand" routerLink="/home">BooK!</a>      <!-- Form -->
+      
+      <!-- User -->
+      <ul class="navbar-nav align-items-center d-none d-md-flex">
+        <li class="nav-item dropdown">
+          <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="media align-items-center">
+              <span class="avatar avatar-sm rounded-circle">
+                <img alt="Image placeholder" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOHt6T4zYUd_9Z0pScohCC0xUr6Ki8Vy-KSlUQObi0es2LxYJuHXFoGNYHsnPXpnTKzw4&usqp=CAU">
+              </span>
+              <div class="media-body ml-2 d-none d-lg-block">
+                <span class="mb-0 text-sm  font-weight-bold">Hello,Welcome</span>
+              </div>
+              <a class="nav-link" routerLink="/cart"><i class="fas fa-shopping-cart"></i></a>
+              <a class="nav-link" routerLink="/wishlist"><i class="fas fa-heart"></i></a>
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+            <div class=" dropdown-header noti-title">
+              <h6 class="text-overflow m-0">Welcome!</h6>
+            </div>
+            <a routerLink="/myprofile" class="dropdown-item">
+              <i class="ni ni-single-02"></i>
+              <span>My profile</span>
+            </a>
+            <a routerLink="/myorders" class="dropdown-item">
+              <i class="ni ni-settings-gear-65"></i>
+              <span>My Orders</span>
+            </a>
+            <a href="./examples/profile.html" class="dropdown-item">
+              <i class="ni ni-calendar-grid-58"></i>
+              <span>Activity</span>
+            </a>
+            <a href="./examples/profile.html" class="dropdown-item">
+              <i class="ni ni-support-16"></i>
+              <span>Support</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <!-- <a href="#!" class="dropdown-item">
+              <i class="ni ni-user-run"></i>
+              <span>Logout</span>
+            </a> -->
+            <div *ngIf = "loggedIn; then Active else Inactive">
+
+            </div>
+            <ng-template #Inactive><button class="btn btn-dark log-btn" routerLink="/login">LOGIN</button></ng-template>
+            <ng-template #Active><button class="btn btn-dark log-btn" (click)=logout()>LOGOUT</button></ng-template>
+            
+            
+          </div>
+        </li>
+      </ul>
+
+    </div>
+   
+  </nav>

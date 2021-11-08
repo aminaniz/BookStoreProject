@@ -1,0 +1,25 @@
+/* .card{
+    margin:4px 4px 4px 4px;
+    max-width: 300px
+} */
+.container{
+    margin-top: 100px;
+}
+.card-img-top{
+    margin-left: 50%;
+  
+    height: 200px;
+    width: auto;
+}
+
+.card-body{
+    height: 250px;
+}
+.card{
+    text-align: center;
+    
+}
+.mr-auto .p-2{
+    margin-left: 50%;
+    margin-bottom: 50%;
+}

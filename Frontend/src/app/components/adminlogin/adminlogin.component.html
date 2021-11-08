@@ -1,0 +1,43 @@
+<body>
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex">
+                    <!-- Background image for card set in CSS! -->
+                </div>
+                <div class="card-body p-4 p-sm-5">
+                    <div *ngIf="message" class="alert" [class]="alertClassName" role="alert">{{message}}</div>
+                    <h1 class="card-title text-center mb-5 fw-light fs-5">Admin Login</h1>
+                    <form #loginForm="ngForm" (submit)="onSubmit(loginForm.value)">
+
+                        <div class="form-floating mb-3">
+                            <label for="username">Username</label>
+                            <input #username="ngModel"  type="text"
+                                id="username" name="username" class="form-control" ngModel required
+                               />
+
+                           
+                        </div>
+
+
+                        <div class="form-floating mb-3">
+                            <label for="password">Password</label>
+                            <input #password="ngModel" 
+                                type="password" id="password" name="password" class="form-control" minlength="6" ngModel
+                                required>
+                            
+                        </div>
+                        <div class="d-grid mb-2">
+                            <input  type="submit" value="Sign in"
+                                class="btn btn-lg btn-primary btn-login fw-bold text-uppercase">
+                        </div>
+                        <hr>
+                        <a class="d-block text-center mt-2 " routerLink="/login">Are you a user?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- footer -->
+<app-footer></app-footer>

@@ -1,0 +1,43 @@
+    <header class="position-relative overflow-hidden p-3 p-md-5  text-center bg-light main">
+      
+        <div class="col-md-5 p-lg-5 mx-auto  text">
+          <h1 class="display-4 font-weight-normal">BooK!</h1>
+          <p class="lead font-weight-normal">“Good friends, good books, and a sleepy conscience: this is the ideal life.”
+            ― Mark Twain</p>
+          <button class="btn btn-outline-light" type="button" routerLink="/about">Learn more</button>
+         
+        </div>
+        <div>
+          <button class="btn btn-outline-light" type="button" routerLink="/blog">Read blog</button>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-5 col-sm-6 mx-auto">
+              <div class="input-group mb-3">
+               
+                  <form class="form-inline">
+                    <div class="input-group-append">
+                    <select class="custom-select my-1 mr-sm-2 input-group-append"  id="search" [(ngModel)]="search" name="search">
+                      <option selected="selected">Search by</option>
+                      <option name="search">Title</option>
+                      <option name="search">AuthorName </option>
+                      <option name="search">ISBN</option>
+                    </select>
+                  </div>
+                
+                 
+              <input type="text" class="form-control" placeholder="Search book"  aria-describedby="basic-addon2"  id="searchtext" [(ngModel)]="searchtext" name="searchtext">
+          <div class="input-group-append">
+            <button class="btn btn-outline-light" type="button" (click)=searchbook(search,searchtext)>Search</button>
+         
+          </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+      </header>
+   
+    
+  
+     

@@ -1,0 +1,54 @@
+
+<app-landingnavbar></app-landingnavbar>
+<app-catnav></app-catnav>
+
+
+  <body>
+	
+	<div >
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="{{book.Image}}" /></div>
+						  
+						</div>
+						
+						
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title"><strong>{{book.Title}}</strong></h3>
+						<h2>{{book.AuthorName}}</h2>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 reviews</span>
+						</div>
+						<!-- <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p> -->
+						<h4 class="price">current price: <span>{{book.Price | currency:'INR'}}</span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+						<h5 class="sizes">Format :  {{book.Format}}</h5><h5>
+						</h5>
+						
+				
+						<div class="d-flex justify-content-between">
+							<div class="p-2 w-100 bd-highlight"><button class="add-to-cart btn btn-dark" type="button" (click)="addToCart(book)">Add to cart</button></div>
+							<!-- <div class="p-2 w-100 bd-highlight"><button class="add-to-cart btn btn-dark" type="button">buy now</button></div> -->
+							<div class="p-2 w-100 bd-highlight"><button class="like btn btn-dark" type="button" (click)="addToWishlist(book)"><span class="fa fa-heart"></span></button></div>
+						  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+
+  <app-similarcard1></app-similarcard1>
+

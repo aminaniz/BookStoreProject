@@ -1,0 +1,95 @@
+<body>
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 ">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex">
+                    <!-- Background image for card set in CSS! -->
+                </div>
+                <div class="card-body p-4 p-sm-5">
+                    <div *ngIf="message" class="alert" [class]="alertClassName" role="alert">{{message}}</div>
+                    <h1 class="card-title text-center mb-5 fw-light fs-5">Signup</h1>
+                    <form #registrationForm=ngForm (submit)="onSubmit()">
+                        <div class="form-floating mb-3">
+                            <label class="control-label" for="Name">Your Name</label>
+                            <input #Name="ngModel" [class.is-invalid]="Name.touched && Name.invalid" type="text"
+                                id="Name" name="Name" class="form-control" [(ngModel)]="userModel.Name" required>
+                            <small class="text-danger" [class.d-none]="Name.untouched || Name.valid">*Name is
+                                required</small>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="control-label" for="email">Email</label>
+                            <input #email="ngModel" [class.is-invalid]="email.touched && email.invalid" type="text"
+                                id="email" name="email" class="form-control" [(ngModel)]="userModel.email" required
+                                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+
+                            <div *ngIf="!email?.valid &&(email?.dirty || email?.touched)">
+                                <small *ngIf="email.errors?.required" class="text-danger"
+                                    [class.d-none]="email.untouched || email.valid">*Email is
+                                    required</small>
+                                <small *ngIf="email.errors?.pattern" class="text-danger"
+                                    [class.d-none]="email.untouched || email.valid">Email is
+                                    not valid</small>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="control-label" for="ContactNo">ContactNo</label>
+                            <input type="number" id="ContactNo" #ContactNo="ngModel"
+                                [class.is-invalid]="ContactNo.invalid && ContactNo.touched" name="ContactNo"
+                                class="form-control" [(ngModel)]="userModel.ContactNo" pattern="^\d{10}$" required />
+                            <div *ngIf="!ContactNo?.valid && (ContactNo?.dirty || ContactNo?.touched)">
+                                <small class="text-danger" *ngIf="ContactNo.errors?.required">*Mobile number is
+                                    required</small>
+                                <small class="text-danger" *ngIf="ContactNo.errors?.pattern">*Mobile number must be 10
+                                    digit</small>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <label class="control-label" for="password">Password</label>
+                            <input #password="ngModel" [class.is-invalid]="password.touched && password.invalid"
+                                type="password" id="password" name="password" class="form-control"
+                                [(ngModel)]="userModel.password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                            <div *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+                                <small class="text-danger" *ngIf="password.errors?.required">*Password is
+                                    required</small>
+                                <small class="text-danger" *ngIf="password.errors?.pattern">*Password length must be
+                                    6</small>
+                            </div>
+                        </div>
+                        <div class="d-grid mb-2">
+                            <input [disabled]="registrationForm.invalid" type="submit" value="Register"
+                                class="btn btn-lg btn-primary btn-login fw-bold text-uppercase">
+                        </div>
+
+
+
+                        <p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and
+                            our
+                            <a href="#">Privacy Policy</a>.
+                        </p>
+                        <hr>
+                        <a class="d-block text-center mt-2 " routerLink="/login">Already have an account? Sign
+                            in</a>
+
+                        <div class="d-grid mb-2">
+                            <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+                                <i class="fab fa-google me-2"></i> Sign up with Google
+                            </button>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                                <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+
+    </div>
+</body>
+<app-footer></app-footer>

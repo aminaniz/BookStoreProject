@@ -1,0 +1,64 @@
+<app-landingnavbar></app-landingnavbar>
+<div class="row">
+    <div class="col-2">
+		
+			<app-landingsidebar></app-landingsidebar>
+		</div>
+		<div class="col-10">
+			<!-- {{load()}} -->
+			<div class="container">
+			<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+			
+				
+						<div class="row  row-cols-md-3 row-cols-1 ">
+							<div class="col mb-4" *ngFor="let book of books ">
+								<div class="card h-100 ">
+								
+								
+										<img src="{{book.Image}}" alt="194x228" class="card-img-top rounded mx-auto d-block">
+										
+								
+								
+							
+									<div class="card-body h-100">
+									
+										<h5 class="card-title">
+											<strong><a (click)=bookdetails(book.Title)>
+												{{book.Title}}
+											</a></strong>
+										</h5>
+										<p class="price-container">
+											<span>{{book.Price | currency:'INR'}}</span>
+										</p>
+										<span class="tag1"></span>
+									
+									<!-- <div class="description">
+										 <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p> -->
+									<!-- </div> --> 
+									
+											<p> Rating : {{book.Rating}}/5</p>
+									
+											
+											<!-- <div class="col-md-6 col-sm-6 col-xs-6">  -->
+												<div class="card-footer d-flex justify-content-between">
+												
+														<a class="btn btn-outline-danger"
+													(click)="addToWishlist(book)"><i class="far fa-heart"></i></a>
+												
+														<a class="btn btn-success" (click)="addToCart(book)">Add to cart</a>
+													
+												
+												
+												</div>
+											</div>
+									</div>
+								
+								</div>
+						
+					</div>
+				</div>
+		
+
+			<!-- end product -->
+		</div>
+	</div>

@@ -1,0 +1,58 @@
+<app-landingnavbar></app-landingnavbar>
+<div class="container">
+<h1>Your orders</h1>
+
+
+
+<main role="main" class="  col-lg-10 pt-3 px-4">
+<!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+<h1 class="h2">Dashboard</h1>
+<div class="btn-toolbar mb-2 mb-md-0">
+<div class="btn-group mr-2">
+    <button class="btn btn-sm btn-outline-secondary">Share</button>
+    <button class="btn btn-sm btn-outline-secondary">Export</button>
+</div>
+<button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+    <span data-feather="calendar"></span> This week
+</button>
+</div>
+</div> -->
+
+
+<!-- <nav class="navbar">
+<input 
+class="form-control" 
+type="text" 
+name="Name"
+[(ngModel)]="Name"
+(ngModelChange)=Search()
+placeholder="Search"
+/>
+</nav> -->
+<div class="table-responsive">
+<table class="table table-striped table-hover ">
+<thead class="thead-dark">
+    <tr>
+        <th>Book</th>
+        <th>Title</th>
+        <th>Quanity</th>
+        <th>Amount</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor= "let order1 of Order">
+        <td><img src="{{order1.Image}}" alt=""></td>
+        <td>{{order1.Title1}}</td>
+        <td>{{order1.Quantity}}</td>
+        <td>{{order1.TotalPrice | currency:'INR'}}</td>
+       
+       
+
+        
+ 
+    </tr>
+</tbody>
+</table>
+</div>
+</main>
+</div>

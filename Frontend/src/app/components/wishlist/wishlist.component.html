@@ -1,0 +1,52 @@
+<app-landingnavbar></app-landingnavbar>
+
+<!-- <div class="container">
+    <h1>Your wishlist</h1>
+    <div class="row">
+        <div class="card-deck">
+      <div class="col" *ngFor="let wishlist of listofWishlist;let i = index">
+          <!-- card -->
+            <!-- <div class="card ">
+                <div class="d-flex">
+                    <div class="mr-auto p-2"><img class="card-img-top" src="{{wishlist.Image}}" alt="Card image cap"></div>
+                    <div class="p-2"><button class="btn btn-outline-danger" (click)="onDelete(wishlist.WishId, i)"><i class="fas fa-times"></i></button></div>
+                </div>
+                
+            <div class="card-body">
+              <h5 class="card-title">{{wishlist.Title}}</h5>
+              <p class="card-text">{{wishlist.Author}}</p>
+              
+            </div>
+            <div class="card-footer">
+                <a  class="btn btn-success" (click)="addToCart(wishlist,wishlist.WishId,i)">Add to Cart</a>
+            </div>
+          </div>
+      </div>
+      <!-- card -->
+    <!-- </div>
+</div>
+  </div> --> 
+  <div class="container">
+      <h1>{{User.Name}} , your wishlist</h1>
+ 
+<div class="row row-cols-1 row-cols-md-3">
+        
+            <div class="col mb-4" *ngFor="let wishlist of listofWishlist;let i = index">
+            <div class="card h-100" >
+                <div class="d-flex">
+                    <div class="mr-auto p-2"><img class="card-img-top" src="{{wishlist.Image}}" alt="Card image cap"></div>
+                    <div class="p-2"><button class="btn btn-outline-danger" (click)="onDelete(wishlist.WishId, i)"><i class="fas fa-times"></i></button></div>
+                </div>
+              <div class="card-body h-100">
+                <h5 class="card-title">{{wishlist.Title}}</h5>
+                      <p class="card-text">{{wishlist.Author}}</p>
+              </div>
+              <div class="card-footer">
+                <a  class="btn btn-success" (click)="addToCart(wishlist,wishlist.WishId,i)">Add to Cart</a>
+              </div>
+            </div>
+           </div>
+   
+</div>
+</div>
+ 
